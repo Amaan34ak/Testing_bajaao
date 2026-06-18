@@ -1,0 +1,4 @@
+pageObject\PriceFilterPage.class
+base\Base.class
+pageObject\CartPage.class
+pageObject\LoginPage.class
