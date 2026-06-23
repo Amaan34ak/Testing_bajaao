@@ -20,19 +20,19 @@ public class Base {
 	}
 	public String getUrl() throws Exception{
 		Properties prop = new Properties();
-		prop.load(new FileInputStream("C:\\Users\\Himank.Patidar\\eclipse-workspace\\Framework_Project\\src\\main\\java\\data.properties"));
+		prop.load(new FileInputStream("C:\\Users\\amaan\\eclipse-workspace\\framework_project\\src\\main\\java\\data.properties"));
 		return prop.getProperty("url");
 		
 	}
 	public String getFrameworkUrl() throws Exception{
 		Properties prop = new Properties();
-		prop.load(new FileInputStream("C:\\Users\\Himank.Patidar\\eclipse-workspace\\Framework_Project\\src\\main\\java\\data.properties"));
+		prop.load(new FileInputStream("C:\\Users\\amaan\\eclipse-workspace\\framework_project\\src\\main\\java\\data.properties"));
 		return prop.getProperty("frameworkUrl");
 		
 	}
 	public String getBrowser() throws Exception{
 		Properties prop = new Properties();
-		prop.load(new FileInputStream("C:\\Users\\Himank.Patidar\\eclipse-workspace\\Framework_Project\\src\\main\\java\\data.properties"));
+		prop.load(new FileInputStream("C:\\Users\\amaan\\eclipse-workspace\\framework_project\\src\\main\\java\\data.properties"));
 		return prop.getProperty("browser");
 	}
 }

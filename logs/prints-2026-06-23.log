@@ -1,0 +1,6 @@
+20:58:24.707 [TestNG-PoolService-4] DEBUG stepDefinations.A_LoginStep - Password Entered
+20:58:24.700 [TestNG-PoolService-1] DEBUG stepDefinations.A_LoginStep - Password Entered
+20:58:24.695 [TestNG-PoolService-2] DEBUG stepDefinations.A_LoginStep - Password Entered
+20:58:27.019 [TestNG-PoolService-3] DEBUG stepDefinations.A_LoginStep - Logged IN
+20:58:27.267 [TestNG-PoolService-1] DEBUG stepDefinations.A_LoginStep - Logged IN
+20:58:27.453 [TestNG-PoolService-4] DEBUG stepDefinations.A_LoginStep - Logged IN
