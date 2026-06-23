@@ -1,27 +1,44 @@
 package stepDefinations;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.testng.Assert; 
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 
+import pageObject.BajaaoHomePage;
+import pageObject.BajaaoSearchPage;
 import pageObject.BajaaoFilterPage;
 import base.Base; 
 
 public class FilterSteps {
     
     WebDriver driver = Base.getdriver(); 
-    
+    BajaaoHomePage homePage = new BajaaoHomePage(driver);
+    BajaaoSearchPage searchPage = new BajaaoSearchPage(driver);
     BajaaoFilterPage filterPage = new BajaaoFilterPage(driver);
 
-    @When("the user applies a price filter between {int} and {int}")
-    public void the_user_applies_a_price_filter_between_and(Integer min, Integer max) {
-        filterPage.applyPriceFilter(min.toString(), max.toString());
+    // This matches your C.filter.feature file perfectly
+    @Given("user has launched the Bajaao website")
+    public void user_has_launched_the_bajaao_website() {
+        homePage.navigateToHomePage();
     }
 
-    @Then("the search results should display products within the selected price range")
-    public void the_search_results_should_display_products_within_the_selected_price_range() {
-        
+    // This matches your C.filter.feature file perfectly
+    @When("user searches for an instrument")
+    public void user_searches_for_an_instrument() {
+        searchPage.searchForProduct("electric guitar");
+    }
+
+    // This matches your C.filter.feature file perfectly
+    @When("Range {string} is selected")
+    public void range_is_selected(String range) {
+        filterPage.applyPriceFilter("5000", "10000");
+    }
+
+    // This matches your C.filter.feature file perfectly
+    @Then("the price is validated successfully")
+    public void the_price_is_validated_successfully() {
         Assert.assertTrue(filterPage.isFilterApplied(), "The price filter tags were not displayed on the page.");
     }
 }

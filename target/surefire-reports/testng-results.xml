@@ -1,99 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-24T01:09:33 IST" name="Suite" finished-at="2026-06-24T01:09:42 IST" duration-ms="9397">
+  <suite started-at="2026-06-24T02:44:52 IST" name="Suite" finished-at="2026-06-24T02:47:01 IST" duration-ms="129028">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-06-24T01:09:33 IST" name="Test" finished-at="2026-06-24T01:09:42 IST" duration-ms="9397">
+    <test started-at="2026-06-24T02:44:52 IST" name="Test" finished-at="2026-06-24T02:47:01 IST" duration-ms="129028">
       <class name="cucumberOptions.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T01:09:33 IST" name="setUpClass" finished-at="2026-06-24T01:09:33 IST" duration-ms="682" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T02:44:52 IST" name="setUpClass" finished-at="2026-06-24T02:44:53 IST" duration-ms="483" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4bef0fe3]]>
+                <![CDATA[org.testng.TestRunner@3b220bcb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T01:09:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-06-24T01:09:42 IST" duration-ms="8557" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T02:44:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-06-24T02:46:08 IST" duration-ms="74937" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validating price by filter on search results"]]>
+                <![CDATA["Verify Bajaao Homepage loads successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validating price by filter functionality"]]>
+                <![CDATA["Bajaao Homepage Verification"]]>
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
-            <message>
-              <![CDATA[The step 'user has launched the Bajaao website' and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("user has launched the Bajaao website")
-public void user_has_launched_the_bajaao_website() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user searches for an instrument")
-public void user_searches_for_an_instrument() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("Range {string} is selected")
-public void range_is_selected(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("the price is validated successfully")
-public void the_price_is_validated_successfully() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'user has launched the Bajaao website' and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("user has launched the Bajaao website")
-public void user_has_launched_the_bajaao_website() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user searches for an instrument")
-public void user_searches_for_an_instrument() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("Range {string} is selected")
-public void range_is_selected(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("the price is validated successfully")
-public void the_price_is_validated_successfully() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.user has launched the Bajaao website(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/C.filter.feature:5)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T01:09:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-06-24T01:09:42 IST" duration-ms="8559" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T02:44:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-06-24T02:46:09 IST" duration-ms="76722" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -106,46 +50,40 @@ at ✽.user has launched the Bajaao website(file:///C:/Users/amaan/eclipse-works
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
-            <message>
-              <![CDATA[The step 'user is on the Bajaao main screen' and 1 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("user is on the Bajaao main screen")
-public void user_is_on_the_bajaao_main_screen() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("the search results should be displayed")
-public void the_search_results_should_be_displayed() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'user is on the Bajaao main screen' and 1 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("user is on the Bajaao main screen")
-public void user_is_on_the_bajaao_main_screen() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("the search results should be displayed")
-public void the_search_results_should_be_displayed() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.user is on the Bajaao main screen(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/B.search.feature:5)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T01:09:42 IST" name="tearDownClass" finished-at="2026-06-24T01:09:42 IST" duration-ms="4" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T02:44:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-06-24T02:47:01 IST" duration-ms="128428" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validating price by filter on search results"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validating price by filter functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The price filter tags were not displayed on the page. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The price filter tags were not displayed on the page. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at stepDefinations.FilterSteps.the_price_is_validated_successfully(FilterSteps.java:42)
+at ✽.the price is validated successfully(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/C.filter.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestRunner@6b09fb41]" started-at="2026-06-24T02:47:01 IST" name="tearDownClass" finished-at="2026-06-24T02:47:01 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

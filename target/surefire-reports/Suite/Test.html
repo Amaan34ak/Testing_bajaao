@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jun 24 01:09:33 IST 2026</td>
+<td>Started on:</td><td>Wed Jun 24 02:44:52 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>9 seconds (9397 ms)</td>
+<tr><td>Total time:</td><td>129 seconds (129028 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,95 +77,37 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='cucumberOptions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validating price by filter on search results", "Validating price by filter functionality"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user has launched the Bajaao website&apos; and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;user has launched the Bajaao website&quot;)
-public void user_has_launched_the_bajaao_website() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;user searches for an instrument&quot;)
-public void user_searches_for_an_instrument() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;Range {string} is selected&quot;)
-public void range_is_selected(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;the price is validated successfully&quot;)
-public void the_price_is_validated_successfully() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at ✽.user has launched the Bajaao website(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/C.filter.feature:5)
-</pre></div><a href='#' onClick='toggleBox("stack-trace150563855", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace150563855'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user has launched the Bajaao website&apos; and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;user has launched the Bajaao website&quot;)
-public void user_has_launched_the_bajaao_website() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;user searches for an instrument&quot;)
-public void user_searches_for_an_instrument() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;Range {string} is selected&quot;)
-public void range_is_selected(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;the price is validated successfully&quot;)
-public void the_price_is_validated_successfully() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at ✽.user has launched the Bajaao website(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/C.filter.feature:5)
+<td><div><pre>java.lang.AssertionError: The price filter tags were not displayed on the page. expected [true] but found [false]
+	at stepDefinations.FilterSteps.the_price_is_validated_successfully(FilterSteps.java:42)
+	at ✽.the price is validated successfully(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/C.filter.feature:8)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace886090270", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace886090270'><pre>java.lang.AssertionError: The price filter tags were not displayed on the page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at stepDefinations.FilterSteps.the_price_is_validated_successfully(FilterSteps.java:42)
+	at ✽.the price is validated successfully(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/C.filter.feature:8)
 </pre></div></td>
-<td>8</td>
+<td>128</td>
+<td>cucumberOptions.TestRunner@6b09fb41</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='cucumberOptions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Bajaao Homepage loads successfully", "Bajaao Homepage Verification"</td>
+<td></td>
+<td>74</td>
 <td>cucumberOptions.TestRunner@6b09fb41</td></tr>
 <tr>
 <td title='cucumberOptions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify product search functionality", "Bajaao Product Search Verification"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user is on the Bajaao main screen&apos; and 1 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;user is on the Bajaao main screen&quot;)
-public void user_is_on_the_bajaao_main_screen() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;the search results should be displayed&quot;)
-public void the_search_results_should_be_displayed() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at ✽.user is on the Bajaao main screen(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/B.search.feature:5)
-</pre></div><a href='#' onClick='toggleBox("stack-trace296142744", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace296142744'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user is on the Bajaao main screen&apos; and 1 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;user is on the Bajaao main screen&quot;)
-public void user_is_on_the_bajaao_main_screen() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;the search results should be displayed&quot;)
-public void the_search_results_should_be_displayed() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at ✽.user is on the Bajaao main screen(file:///C:/Users/amaan/eclipse-workspace/framework_project/src/test/resources/features/B.search.feature:5)
-</pre></div></td>
-<td>8</td>
+<td></td>
+<td>76</td>
 <td>cucumberOptions.TestRunner@6b09fb41</td></tr>
 </table><p>
 </body>

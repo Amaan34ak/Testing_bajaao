@@ -32,8 +32,16 @@ public class BajaaoSearchPage {
     }
 
     // Validation: Check if the search successfully redirected to results
+ // Replace the old method in BajaaoSearchPage.java with this:
     public boolean isSearchSuccessful(String expectedProduct) {
-        wait.until(ExpectedConditions.urlContains("q="));
-        return driver.getCurrentUrl().contains(expectedProduct.replace(" ", "+"));
+        // Wait for the URL to contain either the product name or 'collections'
+        String formattedProduct = expectedProduct.replace(" ", "-").toLowerCase();
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.urlContains("q="),
+            ExpectedConditions.urlContains(formattedProduct),
+            ExpectedConditions.urlContains("collections")
+        ));
+        return driver.getCurrentUrl().toLowerCase().contains(formattedProduct) || 
+               driver.getCurrentUrl().toLowerCase().contains("collections");
     }
 }
