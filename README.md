@@ -2,8 +2,7 @@
 
 package pageObject;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,65 +11,51 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class BajaaoFilterPage {
+public class BajaaoSearchPage {
     
     WebDriver driver;
     WebDriverWait wait;
-    JavascriptExecutor js;
 
-    public BajaaoFilterPage(WebDriver driver) {
+    public BajaaoSearchPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        this.js = (JavascriptExecutor) driver; 
         PageFactory.initElements(driver, this);
     }
 
-    // Looks for the "PRICE" accordion arrow
-    @FindBy(xpath = "//*[contains(translate(text(), 'PRICE', 'price'), 'price')]")
-    WebElement priceAccordionButton;
+    // Shopify's standard desktop search bar locator
+    @FindBy(xpath = "//input[@name='q' and (@type='text' or @type='search')]")
+    WebElement searchBox;
 
-    public void applyPriceFilter(String min, String max) {
+    public void searchForProduct(String product) {
         try {
-            // 1. Scroll down so the filters are visible on screen
-            js.executeScript("window.scrollBy(0, 500);");
-            Thread.sleep(1500);
-
-            // 2. Try to click the Price accordion to open the checkboxes
-            try {
-                js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", priceAccordionButton);
-                js.executeScript("arguments[0].click();", priceAccordionButton);
-                Thread.sleep(1500); // Wait for the menu to slide open
-            } catch (Exception e) {
-                System.out.println("Price accordion not found or already open. Proceeding...");
-            }
-
-            // 3. DYNAMIC XPATH: This looks exactly at the DOM from your photo!
-            // It finds the list item <li> containing both "5000" and "10000", then finds the checkbox inside it.
-            String checkboxXPath = "//li[contains(., '" + min + "') and contains(., '" + max + "')]//input[@type='checkbox']";
+            // Wait for the search box to be clickable, then type and press ENTER
+            WebElement searchInput = wait.until(ExpectedConditions.elementToBeClickable(searchBox));
+            searchInput.clear();
+            searchInput.sendKeys(product);
+            searchInput.sendKeys(Keys.ENTER);
             
-            WebElement targetCheckbox = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(checkboxXPath)));
-
-            // 4. Force click the hidden checkbox using Javascript
-            js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", targetCheckbox);
-            Thread.sleep(500);
-            js.executeScript("arguments[0].click();", targetCheckbox);
-            
-            System.out.println("Successfully clicked the checkbox for range: " + min + " - " + max);
-            
-            // Wait 3 seconds for the page to refresh with the filtered results
-            Thread.sleep(3000); 
-
+            // Adding a small pause to let the redirect begin
+            Thread.sleep(2000); 
         } catch (Exception e) {
-            System.out.println("Filter execution encountered an issue: " + e.getMessage());
+            System.out.println("Could not interact with the search bar: " + e.getMessage());
         }
     }
 
-    public boolean isFilterApplied() {
+    public boolean isSearchSuccessful(String expectedProduct) {
         try {
-            // Check if the URL updated to show the filter was applied (From your photo: sellingPrice_gte=5000)
-            return wait.until(ExpectedConditions.urlContains("5000"));
+            // We use 'wait.until' to check for multiple possible URL patterns.
+            // Bajaao either redirects to a "/collections/" page or a "/search?q=" page.
+            // If ANY of these appear in the URL within 15 seconds, the test passes (returns true).
+            return wait.until(ExpectedConditions.or(
+                ExpectedConditions.urlContains("collections"),
+                ExpectedConditions.urlContains("q="),
+                ExpectedConditions.urlContains(expectedProduct.split(" ")[0].toLowerCase()) // Looks for "electric"
+            ));
         } catch (Exception e) {
+            // If 15 seconds pass and the URL still hasn't changed, it fails gracefully
+            System.out.println("URL validation timed out.");
             return false;
         }
     }
 }
+
